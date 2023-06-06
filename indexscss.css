@@ -1,0 +1,91 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "inter";
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px;
+  border-bottom: 3px solid rgb(255, 77, 0);
+}
+.headerContainer img {
+  width: 2.3%;
+}
+.headerContainer .logoTxt {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-style: italic;
+  margin-left: 0.5rem;
+  color: rgb(230, 230, 11);
+}
+.headerContainer .logoTxt .logoTxtOrange {
+  color: rgb(255, 77, 0);
+}
+
+.container {
+  max-width: 1430px;
+  margin: 0px auto;
+}
+
+.mainHeading {
+  text-align: center;
+  margin: 20px 0px;
+}
+.mainHeading h1 {
+  font-weight: 300;
+}
+.mainHeading p {
+  margin-top: 24px;
+  font-size: 1.1rem;
+  color: gray;
+}
+
+.ratContainer {
+  border: 1px solid gray;
+  padding: 10px;
+}
+.ratContainer .ratCardContainer {
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+.ratContainer .ratCardContainer .ratCard {
+  border: 1.5px solid gray;
+}
+.ratContainer .ratCardContainer .ratCard img {
+  max-width: 100%;
+}
+.ratContainer .ratCardContainer .ratCard .ratCardContent {
+  padding: 2rem 7rem;
+  text-align: center;
+  color: white;
+  background-color: rgb(255, 77, 0);
+}
+.ratContainer .ratCardContainer .ratCard .ratCardContent .ratDiscirption {
+  font-size: 1.4rem;
+}
+.ratContainer .ratCardContainer .ratCard .ratCardContent .rtacta {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 0px auto;
+  padding: 0px 10px;
+  margin-top: 0.5rem;
+  border: 2px solid white;
+  width: -moz-max-content;
+  width: max-content;
+  border-radius: 50%;
+}
+.ratContainer .ratCardContainer .ratCard .ratCardContent:hover {
+  background-color: rgb(230, 230, 11);
+}
+
+@media only screen and (min-width: 400px) and (max-width: 767px) {
+  .ratCardContainer {
+    flex-wrap: wrap;
+  }
+}/*# sourceMappingURL=indexscss.css.map */

@@ -1,0 +1,120 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'inter';
+}
+
+
+$orange : rgb(255, 77, 0);
+$yellowBg : rgb(230, 230, 11);
+
+// Header Start
+
+.headerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+    border-bottom: 3px solid $orange;
+
+    img {
+        width: 2.3%;
+    }
+
+    .logoTxt {
+        font-size: 1.5rem;
+        font-weight: 600;
+        font-style: italic;
+        margin-left: 0.5rem;
+        color: $yellowBg;
+    }
+
+    .logoTxt .logoTxtOrange {
+        color: $orange;
+    }
+}
+
+// Header End
+
+
+// Container Start
+.container {
+    max-width: 1430px;
+    margin: 0px auto;
+}
+
+// Container End
+
+// Main Heading Start
+.mainHeading {
+    text-align: center;
+    margin: 20px 0px;
+
+    h1 {
+        font-weight: 300;
+    }
+
+    p {
+        margin-top: 24px;
+        font-size: 1.1rem;
+        color: gray;
+    }
+}
+
+// Main Heading End
+
+// Related Ad Topic Start
+
+.ratContainer {
+    border: 1px solid gray;
+    padding: 10px;
+
+    .ratCardContainer {
+        margin-top: 10px;
+        display: flex;
+        width: 100%;
+        gap: 10px;
+
+        .ratCard {
+            border: 1.5px solid gray;
+
+            img {
+                max-width: 100%;
+            }
+
+            .ratCardContent {
+                padding: 2rem 7rem;
+                text-align: center;
+                color: white;
+                background-color: $orange;
+
+                .ratDiscirption {
+                    font-size: 1.4rem;
+                }
+
+                .rtacta {
+                    font-size: 1.2rem;
+                    font-weight: 800;
+                    margin: 0px auto;
+                    padding: 0px 10px;
+                    margin-top: 0.5rem;
+                    border:2px solid white;
+                    width: max-content;
+                    border-radius: 50%;
+                }
+                &:hover{
+                    background-color: $yellowBg;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:400px) and (max-width:767px) {
+    .ratCardContainer {
+        flex-wrap: wrap;
+    }
+}
+
+// Related Ad Topic End
