@@ -74,24 +74,25 @@
   text-align: center;
 }
 .ratContainer .ratCardContainer .ratCard .ratCardContent .rtacta {
-  font-size: 1.2rem;
-  font-weight: 800;
-  margin: 0px auto;
-  padding: 0px 10px;
   margin-top: 0.5rem;
-  border: 2px solid white;
-  width: -moz-max-content;
-  width: max-content;
-  border-radius: 50%;
-  color: white;
+}
+.ratContainer .ratCardContainer .ratCard .ratCardContent .rtacta img {
+  width: 15%;
+  height: 15%;
+  margin: 0px auto;
+}
+.ratContainer .ratCardContainer .ratCard .ratCardContent .rtacta.blacktop {
+  display: none;
 }
 .ratContainer .ratCardContainer .ratCard .ratCardContent:hover {
   background-color: #ffd55c;
   color: black;
 }
+.ratContainer .ratCardContainer .ratCard .ratCardContent:hover .rtacta.blacktop {
+  display: block;
+}
 .ratContainer .ratCardContainer .ratCard .ratCardContent:hover .rtacta {
-  color: black;
-  border: 1px solid black;
+  display: none;
 }
 .ratContainer .rtaLowerCardContainer {
   display: grid;
@@ -110,16 +111,7 @@
   align-items: center;
 }
 .ratContainer .rtaLowerCardContainer .ratCard .ratCardContent .rtacta {
-  font-size: 1.2rem;
-  font-weight: 800;
-  margin: 0px 0px;
-  padding: 0px 10px;
   margin-top: 0.5rem;
-  border: 2px solid white;
-  width: -moz-max-content;
-  width: max-content;
-  border-radius: 50%;
-  color: white;
 }
 .ratContainer .rtaLowerCardContainer .ratCard .ratCardContent .ratDiscirption {
   margin: 0px auto 0px 0px;
@@ -156,7 +148,7 @@
 }
 .ymiContainer .ymiCardContainer .ymiCardContent {
   height: 140px;
-  padding: 20px;
+  padding: 19px;
   text-align: center;
   background-color: #3d3c3c;
   display: flex;
@@ -172,24 +164,25 @@
   text-align: center;
 }
 .ymiContainer .ymiCardContainer .ymiCardContent .ymicta {
-  font-size: 1.2rem;
-  font-weight: 800;
-  margin: 0px auto;
-  padding: 0px 10px;
   margin-top: 0.5rem;
-  border: 2px solid white;
-  width: -moz-max-content;
-  width: max-content;
-  border-radius: 50%;
-  color: white;
+}
+.ymiContainer .ymiCardContainer .ymiCardContent .rtacta img {
+  width: 16%;
+  height: 60%;
+  margin: 0px auto;
+}
+.ymiContainer .ymiCardContainer .ymiCardContent .rtacta.blacktop {
+  display: none;
 }
 .ymiContainer .ymiCardContainer .ymiCardContent:hover {
   background-color: white;
   color: black;
 }
-.ymiContainer .ymiCardContainer .ymiCardContent:hover .ymicta {
-  color: black;
-  border: 1px solid black;
+.ymiContainer .ymiCardContainer .ymiCardContent:hover .rtacta.blacktop {
+  display: block;
+}
+.ymiContainer .ymiCardContainer .ymiCardContent:hover .rtacta {
+  display: none;
 }
 .ymiContainer .ads {
   text-align: right;
@@ -198,9 +191,49 @@
   font-family: "Helvetica";
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .container {
     padding: 0px 10px;
+  }
+  .ratContainer .ratCardContainer {
+    flex-wrap: wrap;
+  }
+  .ratContainer .ratCardContainer .ratCard {
+    width: 49%;
+  }
+  .ratContainer .ratCardContainer .ratCard .ratCardContent {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  .ratContainer .ratCardContainer .ratCard .ratCardContent .rtacta img {
+    width: 100%;
+  }
+  .ratContainer .ratCardContainer .ratCard .ratCardContent .rtacta {
+    margin: 0px 0px 0px auto;
+  }
+  .ratContainer .rtaLowerCardContainer .ratCard {
+    padding: 10px 20px;
+  }
+  .ratContainer .rtaLowerCardContainer .ratCard .ratCardContent .ratDiscirption {
+    padding-left: 0rem;
+  }
+  .ratContainer .rtaLowerCardContainer .ratCard .ratCardContent .rtacta {
+    margin-top: 0px;
+  }
+  .ymiContainer .ymiCardContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 767px) {
+  .container {
+    padding: 0px 10px;
+  }
+  .mainHeading h1 {
+    font-size: 24px;
+  }
+  .mainHeading p {
+    margin-top: 12px;
   }
   .ratContainer .ratCardContainer {
     flex-wrap: wrap;
@@ -212,6 +245,9 @@
     display: flex;
     align-items: center;
     padding: 10px 20px;
+  }
+  .ratContainer .ratCardContainer .ratCard .ratCardContent .rtacta img {
+    width: 100%;
   }
   .ratContainer .ratCardContainer .ratCard .ratCardContent .rtacta {
     margin: 0px 0px 0px auto;

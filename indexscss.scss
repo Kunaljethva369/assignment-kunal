@@ -9,15 +9,15 @@ $yellowBg : #ffd55c;
 $cardOrange: #f8744c;
 
 @mixin rtacta($p1) {
-    font-size: 1.2rem;
-    font-weight: 800;
-    margin: 0px $p1;
-    padding: 0px 10px;
+    // font-size: 1.2rem;
+    // font-weight: 800;
+    // margin: 0px $p1;
+    // padding: 0px 10px;
     margin-top: 0.5rem;
-    border: 2px solid white;
-    width: max-content;
-    border-radius: 50%;
-    color: white;
+    // border: 2px solid white;
+    // width: max-content;
+    // border-radius: 50%;
+    // color: white;
 }
 
 @mixin ads {
@@ -33,7 +33,6 @@ $cardOrange: #f8744c;
 }
 
 // Header Start
-
 .headerContainer {
     display: flex;
     justify-content: center;
@@ -43,7 +42,6 @@ $cardOrange: #f8744c;
 }
 
 // Header End
-
 
 // Container Start
 .container {
@@ -78,7 +76,6 @@ $cardOrange: #f8744c;
 // Main Heading End
 
 // Related Ad Topic Start
-
 .ratContainer {
     border: 1px solid #d7d7d7;
     margin: 0px auto;
@@ -123,12 +120,26 @@ $cardOrange: #f8744c;
                     @include rtacta(auto);
                 }
 
+                .rtacta img {
+                    width: 15%;
+                    height: 15%;
+                    margin: 0px auto;
+                }
+
+                .rtacta.blacktop {
+                    display: none;
+                }
+
                 &:hover {
                     background-color: $yellowBg;
                     color: black;
 
+                    .rtacta.blacktop {
+                        display: block;
+                    }
+
                     .rtacta {
-                        @include ctaHover(black);
+                        display: none;
                     }
                 }
             }
@@ -170,6 +181,9 @@ $cardOrange: #f8744c;
     }
 }
 
+// Related Ad Topic End
+
+// You Interest Start
 .ymiTagLine {
     font-size: 17px;
     color: #8b8989;
@@ -186,17 +200,17 @@ $cardOrange: #f8744c;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 20px;
-        
+
         .ymiCards {
             img {
                 width: 100%;
                 height: 141px;
             }
         }
-        
+
         .ymiCardContent {
             height: 140px;
-            padding: 20px;
+            padding: 19px;
             text-align: center;
             background-color: #3d3c3c;
             display: flex;
@@ -216,12 +230,26 @@ $cardOrange: #f8744c;
                 @include rtacta(auto);
             }
 
+            .rtacta img {
+                width: 16%;
+                height: 60%;
+                margin: 0px auto;
+            }
+
+            .rtacta.blacktop {
+                display: none;
+            }
+
             &:hover {
                 background-color: white;
                 color: black;
 
-                .ymicta {
-                    @include ctaHover(black);
+                .rtacta.blacktop {
+                    display: block;
+                }
+
+                .rtacta {
+                    display: none;
                 }
             }
         }
@@ -232,21 +260,29 @@ $cardOrange: #f8744c;
     }
 }
 
-@media only screen  and (max-width:767px) {
-    .container{
+// You Interest End
+
+// Tablet To laptop Screen 
+@media only screen and (min-width:768px) and (max-width:991px) {
+    .container {
         padding: 0px 10px;
     }
+
     .ratContainer {
         .ratCardContainer {
             flex-wrap: wrap;
 
             .ratCard {
-                width: 100%;
-                .ratCardContent{
+                width: 49%;
+
+                .ratCardContent {
                     display: flex;
                     align-items: center;
                     padding: 10px 20px;
-                    .rtacta{
+                    .rtacta img {
+                        width: 100%;
+                    }
+                    .rtacta {
                         margin: 0px 0px 0px auto;
                     }
                 }
@@ -254,16 +290,81 @@ $cardOrange: #f8744c;
         }
     }
 
-    .ratContainer{
-        .rtaLowerCardContainer{
-            grid-template-columns: auto;
-            .ratCard{   
+    .ratContainer {
+        .rtaLowerCardContainer {
+            .ratCard {
                 padding: 10px 20px;
-                .ratCardContent{
-                    .ratDiscirption{
+
+                .ratCardContent {
+                    .ratDiscirption {
                         padding-left: 0rem;
                     }
-                    .rtacta{
+
+                    .rtacta {
+                        margin-top: 0px;
+                    }
+                }
+            }
+        }
+    }
+
+    .ymiContainer {
+        .ymiCardContainer {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+// Mobile To Tablet Screen
+@media only screen and (min-width:400px) and (max-width:767px) {
+    .container {
+        padding: 0px 10px;
+    }
+
+    .mainHeading {
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            margin-top: 12px;
+        }
+    }
+
+    .ratContainer {
+        .ratCardContainer {
+            flex-wrap: wrap;
+
+            .ratCard {
+                width: 100%;
+
+                .ratCardContent {
+                    display: flex;
+                    align-items: center;
+                    padding: 10px 20px;
+
+                    .rtacta img {
+                        width: 100%;
+                    }
+                    .rtacta {
+                        margin: 0px 0px 0px auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .ratContainer {
+        .rtaLowerCardContainer {
+            grid-template-columns: auto;
+
+            .ratCard {
+                padding: 10px 20px;
+                .ratCardContent {
+                    .ratDiscirption {
+                        padding-left: 0rem;
+                    }
+                    .rtacta {
                         margin-top: 0px;
                     }
                 }
@@ -277,5 +378,3 @@ $cardOrange: #f8744c;
         }
     }
 }
-
-// Related Ad Topic End
