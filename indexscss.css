@@ -98,7 +98,6 @@
   grid-template-columns: 1fr 1fr;
   gap: 8px;
   align-items: center;
-  height: 71px;
   margin-top: 1rem;
   color: white;
 }
@@ -197,10 +196,35 @@
   font-family: "Helvetica";
 }
 
-@media only screen and (min-width: 400px) and (max-width: 767px) {
-  .ratCardContainer,
-  .rtaLowerCardContainer {
+@media only screen and (max-width: 767px) {
+  .container {
+    padding: 0px 10px;
+  }
+  .ratContainer .ratCardContainer {
     flex-wrap: wrap;
+  }
+  .ratContainer .ratCardContainer .ratCard {
+    width: 100%;
+  }
+  .ratContainer .ratCardContainer .ratCard .ratCardContent {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  .ratContainer .ratCardContainer .ratCard .ratCardContent .rtacta {
+    margin: 0px 0px 0px auto;
+  }
+  .ratContainer .rtaLowerCardContainer {
+    grid-template-columns: auto;
+  }
+  .ratContainer .rtaLowerCardContainer .ratCard {
+    padding: 10px 20px;
+  }
+  .ratContainer .rtaLowerCardContainer .ratCard .ratCardContent .ratDiscirption {
+    padding-left: 0rem;
+  }
+  .ratContainer .rtaLowerCardContainer .ratCard .ratCardContent .rtacta {
+    margin-top: 0px;
   }
   .ymiContainer .ymiCardContainer {
     grid-template-columns: repeat(2, 1fr);

@@ -99,6 +99,7 @@ $cardOrange: #f8744c;
             border: 0.5px solid #cccccc;
             border-radius: 2px;
             width: 33.33%;
+
             img {
                 width: 100%;
                 height: 355px;
@@ -140,7 +141,6 @@ $cardOrange: #f8744c;
         grid-template-columns: 1fr 1fr;
         gap: 8px;
         align-items: center;
-        height: 71px;
         margin-top: 1rem;
         color: white;
 
@@ -186,6 +186,7 @@ $cardOrange: #f8744c;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 20px;
+
         .ymiCards {
             img {
                 width: 100%;
@@ -216,7 +217,8 @@ $cardOrange: #f8744c;
             &:hover {
                 background-color: white;
                 color: black;
-                .ymicta{
+
+                .ymicta {
                     @include ctaHover(black);
                 }
             }
@@ -228,11 +230,43 @@ $cardOrange: #f8744c;
     }
 }
 
-@media only screen and (min-width:400px) and (max-width:767px) {
+@media only screen  and (max-width:767px) {
+    .container{
+        padding: 0px 10px;
+    }
+    .ratContainer {
+        .ratCardContainer {
+            flex-wrap: wrap;
 
-    .ratCardContainer,
-    .rtaLowerCardContainer {
-        flex-wrap: wrap;
+            .ratCard {
+                width: 100%;
+                .ratCardContent{
+                    display: flex;
+                    align-items: center;
+                    padding: 10px 20px;
+                    .rtacta{
+                        margin: 0px 0px 0px auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .ratContainer{
+        .rtaLowerCardContainer{
+            grid-template-columns: auto;
+            .ratCard{   
+                padding: 10px 20px;
+                .ratCardContent{
+                    .ratDiscirption{
+                        padding-left: 0rem;
+                    }
+                    .rtacta{
+                        margin-top: 0px;
+                    }
+                }
+            }
+        }
     }
 
     .ymiContainer {
