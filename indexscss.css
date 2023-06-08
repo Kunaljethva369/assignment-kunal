@@ -77,8 +77,8 @@
   margin-top: 10px;
 }
 .ratContainer .ratCardContainer .ratCard .ratCardContent .ratcta img {
-  width: 15%;
-  height: 20%;
+  width: 20px;
+  height: 20px;
   margin: 0px auto;
 }
 .ratContainer .ratCardContainer .ratCard .ratCardContent .ratcta.blacktop {
@@ -105,6 +105,7 @@
 .ratContainer .rtaLowerCardContainer .ratCard {
   padding: 1rem;
   background-color: #f8744c;
+  cursor: pointer;
 }
 .ratContainer .rtaLowerCardContainer .ratCard .ratCardContent {
   display: flex;
@@ -114,6 +115,27 @@
   margin: 0px auto 0px 0px;
   font-size: 21px;
   padding-left: 1.5rem;
+}
+.ratContainer .rtaLowerCardContainer .ratCard .ratcta.blacktop {
+  display: none;
+}
+.ratContainer .rtaLowerCardContainer .ratCard:hover .ratcta img {
+  width: 20px;
+  height: 20px;
+  margin: 0px auto;
+}
+.ratContainer .rtaLowerCardContainer .ratCard:hover .ratcta.blacktop {
+  display: none;
+}
+.ratContainer .rtaLowerCardContainer .ratCard:hover:hover {
+  background-color: #ffd55c;
+  color: black;
+}
+.ratContainer .rtaLowerCardContainer .ratCard:hover:hover .ratcta.blacktop {
+  display: block;
+}
+.ratContainer .rtaLowerCardContainer .ratCard:hover:hover .ratcta {
+  display: none;
 }
 
 .ads {
@@ -144,8 +166,9 @@
   height: 141px;
 }
 .ymiContainer .ymiCardContainer .ymiCardContent {
+  cursor: pointer;
   height: 140px;
-  padding: 19px 12px;
+  padding: 19px 12.5px;
   text-align: center;
   background-color: #3d3c3c;
   display: flex;
@@ -160,8 +183,8 @@
   text-align: center;
 }
 .ymiContainer .ymiCardContainer .ymiCardContent .ratcta img {
-  width: 16%;
-  height: 60%;
+  width: 20px;
+  height: 20px;
   margin: 0px auto;
 }
 .ymiContainer .ymiCardContainer .ymiCardContent .ratcta.blacktop {
@@ -194,7 +217,10 @@
   .ratContainer .ratCardContainer .ratCard .ratCardContent {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px;
+  }
+  .ratContainer .ratCardContainer .ratCard .ratCardContent .ratDiscirption {
+    font-size: 19px;
   }
   .ratContainer .ratCardContainer .ratCard .ratCardContent .ratcta img {
     width: 100%;
@@ -210,6 +236,7 @@
   }
   .ratContainer .rtaLowerCardContainer .ratCard .ratCardContent .ratDiscirption {
     padding-left: 0rem;
+    font-size: 19px;
   }
   .ratContainer .rtaLowerCardContainer .ratCard .ratCardContent .ratcta {
     margin-top: 0px;
@@ -217,8 +244,11 @@
   .ymiContainer .ymiCardContainer {
     grid-template-columns: repeat(3, 1fr);
   }
+  .ymiContainer .ymiCardContainer .ymiCardContent {
+    height: 130px;
+  }
 }
-@media only screen and (min-width: 400px) and (max-width: 767px) {
+@media only screen and (min-width: 360px) and (max-width: 767px) {
   .container {
     padding: 0px 10px;
   }
@@ -240,7 +270,10 @@
   .ratContainer .ratCardContainer .ratCard .ratCardContent {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px;
+  }
+  .ratContainer .ratCardContainer .ratCard .ratCardContent .ratDiscirption {
+    font-size: 18px;
   }
   .ratContainer .ratCardContainer .ratCard .ratCardContent .ratcta img {
     width: 100%;
@@ -256,11 +289,15 @@
   }
   .ratContainer .rtaLowerCardContainer .ratCard .ratCardContent .ratDiscirption {
     padding-left: 0rem;
+    font-size: 18px;
   }
   .ratContainer .rtaLowerCardContainer .ratCard .ratCardContent .ratcta {
     margin-top: 0px;
   }
   .ymiContainer .ymiCardContainer {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .ymiContainer .ymiCardContainer .ymiCardContent {
+    height: 120px;
   }
 }/*# sourceMappingURL=indexscss.css.map */

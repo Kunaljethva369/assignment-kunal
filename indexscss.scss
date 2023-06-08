@@ -23,7 +23,7 @@ $blackColor: black;
     border: 1px solid $col;
 }
 
-@mixin rtaContainerMob($width) {
+@mixin rtaContainerMob($width, $fontSize) {
     .ratCardContainer {
         flex-wrap: wrap;
 
@@ -33,7 +33,11 @@ $blackColor: black;
             .ratCardContent {
                 display: flex;
                 align-items: center;
-                padding: 10px 20px;
+                padding: 10px;
+
+                .ratDiscirption {
+                    font-size: $fontSize;
+                }
 
                 .ratcta img {
                     width: 100%;
@@ -47,7 +51,7 @@ $blackColor: black;
     }
 }
 
-@mixin rtaLowerContainerMob($gridCol) {
+@mixin rtaLowerContainerMob($gridCol, $fontSize) {
     grid-template-columns: $gridCol;
 
     .ratCard {
@@ -56,6 +60,7 @@ $blackColor: black;
         .ratCardContent {
             .ratDiscirption {
                 padding-left: 0rem;
+                font-size: $fontSize;
             }
 
             .ratcta {
@@ -65,10 +70,10 @@ $blackColor: black;
     }
 }
 
-@mixin ctaBtn($width, $height, $bgColor, $color) {
+@mixin ctaBtn($bgColor, $color) {
     .ratcta img {
-        width: $width;
-        height: $height;
+        width: 20px;
+        height: 20px;
         margin: 0px auto;
     }
 
@@ -86,6 +91,18 @@ $blackColor: black;
 
         .ratcta {
             display: none;
+        }
+    }
+}
+
+@mixin ymiContainerMob($gridVal, $gridFr, $height) {
+    .ymiContainer {
+        .ymiCardContainer {
+            grid-template-columns: repeat($gridVal, $gridFr);
+
+            .ymiCardContent {
+                height: $height;
+            }
         }
     }
 }
@@ -178,7 +195,7 @@ $blackColor: black;
                     margin-top: 10px;
                 }
 
-                @include ctaBtn(15%, 20%, $yellowBg, $blackColor);
+                @include ctaBtn($yellowBg, $blackColor);
             }
         }
     }
@@ -196,6 +213,7 @@ $blackColor: black;
         .ratCard {
             padding: 1rem;
             background-color: $cardOrange;
+            cursor: pointer;
 
             .ratCardContent {
                 display: flex;
@@ -206,7 +224,17 @@ $blackColor: black;
                     font-size: 21px;
                     padding-left: 1.5rem;
                 }
+
             }
+
+            .ratcta.blacktop {
+                display: none;
+            }
+
+            &:hover {
+                @include ctaBtn($yellowBg, $blackColor);
+            }
+
         }
     }
 
@@ -249,8 +277,9 @@ $blackColor: black;
         }
 
         .ymiCardContent {
+            cursor: pointer;
             height: 140px;
-            padding: 19px 12px;
+            padding: 19px 12.5px;
             text-align: center;
             background-color: #3d3c3c;
             display: flex;
@@ -265,7 +294,7 @@ $blackColor: black;
                 text-align: center;
             }
 
-            @include ctaBtn(16%, 60%, white, $blackColor);
+            @include ctaBtn(white, $blackColor);
         }
     }
 }
@@ -286,22 +315,18 @@ $blackColor: black;
     }
 
     .ratContainer {
-        @include rtaContainerMob(49%);
+        @include rtaContainerMob(49%, 19px);
 
         .rtaLowerCardContainer {
-            @include rtaLowerContainerMob('auto-fit');
+            @include rtaLowerContainerMob('auto-fit', 19px);
         }
     }
 
-    .ymiContainer {
-        .ymiCardContainer {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
+    @include ymiContainerMob(3, 1fr, 130px);
 }
 
 // Mobile To Tablet Screen
-@media only screen and (min-width:400px) and (max-width:767px) {
+@media only screen and (min-width:360px) and (max-width:767px) {
     .container {
         padding: 0px 10px;
     }
@@ -323,16 +348,12 @@ $blackColor: black;
     }
 
     .ratContainer {
-        @include rtaContainerMob(100%);
+        @include rtaContainerMob(100%, 18px);
 
         .rtaLowerCardContainer {
-            @include rtaLowerContainerMob(auto);
+            @include rtaLowerContainerMob(auto, 18px);
         }
     }
 
-    .ymiContainer {
-        .ymiCardContainer {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
+    @include ymiContainerMob(2, 1fr, 120px);
 }
