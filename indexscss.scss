@@ -2,34 +2,92 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: "Helvetica" !important;
 }
 
 $orange : #e64616;
 $yellowBg : #ffd55c;
 $cardOrange: #f8744c;
-
-@mixin rtacta($p1) {
-    // font-size: 1.2rem;
-    // font-weight: 800;
-    // margin: 0px $p1;
-    // padding: 0px 10px;
-    margin-top: 0.5rem;
-    // border: 2px solid white;
-    // width: max-content;
-    // border-radius: 50%;
-    // color: white;
-}
+$taglineColor: #8b8989;
+$adsColor: #403f3f;
+$blackColor: black;
 
 @mixin ads {
     text-align: right;
     font-size: 12px;
-    color: #403f3f;
-    font-family: "Helvetica";
+    color: $adsColor;
 }
 
 @mixin ctaHover($col) {
     color: $col;
     border: 1px solid $col;
+}
+
+@mixin rtaContainerMob($width) {
+    .ratCardContainer {
+        flex-wrap: wrap;
+
+        .ratCard {
+            width: $width;
+
+            .ratCardContent {
+                display: flex;
+                align-items: center;
+                padding: 10px 20px;
+
+                .ratcta img {
+                    width: 100%;
+                }
+
+                .ratcta {
+                    margin: 0px 0px 0px auto;
+                }
+            }
+        }
+    }
+}
+
+@mixin rtaLowerContainerMob($gridCol) {
+    grid-template-columns: $gridCol;
+
+    .ratCard {
+        padding: 10px 20px;
+
+        .ratCardContent {
+            .ratDiscirption {
+                padding-left: 0rem;
+            }
+
+            .ratcta {
+                margin-top: 0px;
+            }
+        }
+    }
+}
+
+@mixin ctaBtn($width, $height, $bgColor, $color) {
+    .ratcta img {
+        width: $width;
+        height: $height;
+        margin: 0px auto;
+    }
+
+    .ratcta.blacktop {
+        display: none;
+    }
+
+    &:hover {
+        background-color: $bgColor;
+        color: $color;
+
+        .ratcta.blacktop {
+            display: block;
+        }
+
+        .ratcta {
+            display: none;
+        }
+    }
 }
 
 // Header Start
@@ -39,6 +97,10 @@ $cardOrange: #f8744c;
     align-items: center;
     padding: 10px 0px;
     border-bottom: 3px solid $orange;
+
+    img {
+        max-width: 18%;
+    }
 }
 
 // Header End
@@ -60,15 +122,13 @@ $cardOrange: #f8744c;
         font-weight: 400;
         font-size: 30px;
         color: #333333;
-        font-family: "Myriad Pro";
         text-align: center;
     }
 
     p {
         margin-top: 24px;
         font-size: 17px;
-        color: #8b8989;
-        font-family: "Myriad Pro";
+        color: $taglineColor;
         text-align: center;
     }
 }
@@ -83,8 +143,7 @@ $cardOrange: #f8744c;
 
     span {
         font-size: 12px;
-        color: #403f3f;
-        font-family: "Helvetica";
+        color: $adsColor;
     }
 
     .ratCardContainer {
@@ -112,40 +171,19 @@ $cardOrange: #f8744c;
 
                 .ratDiscirption {
                     font-size: 21px;
-                    font-family: "Myriad Pro";
                     text-align: center;
                 }
 
-                .rtacta {
-                    @include rtacta(auto);
+                .ratcta {
+                    margin-top: 10px;
                 }
 
-                .rtacta img {
-                    width: 15%;
-                    height: 15%;
-                    margin: 0px auto;
-                }
-
-                .rtacta.blacktop {
-                    display: none;
-                }
-
-                &:hover {
-                    background-color: $yellowBg;
-                    color: black;
-
-                    .rtacta.blacktop {
-                        display: block;
-                    }
-
-                    .rtacta {
-                        display: none;
-                    }
-                }
+                @include ctaBtn(15%, 20%, $yellowBg, $blackColor);
             }
-
         }
     }
+
+    // Lower Related Topic Start 
 
     .rtaLowerCardContainer {
         display: grid;
@@ -163,10 +201,6 @@ $cardOrange: #f8744c;
                 display: flex;
                 align-items: center;
 
-                .rtacta {
-                    @include rtacta(0px)
-                }
-
                 .ratDiscirption {
                     margin: 0px auto 0px 0px;
                     font-size: 21px;
@@ -176,25 +210,31 @@ $cardOrange: #f8744c;
         }
     }
 
-    .ads {
-        @include ads();
-    }
+    // Lower Related Topic End
+
 }
+
+// Ads Start
+.ads {
+    @include ads();
+}
+
+// Ads End
 
 // Related Ad Topic End
 
 // You Interest Start
 .ymiTagLine {
     font-size: 17px;
-    color: #8b8989;
-    font-family: "Helvetica";
+    color: $taglineColor;
     margin-top: 15px;
+    line-height: 1.4;
 }
 
 .ymiContainer {
     border: 1px solid rgb(215, 215, 215);
     padding: 10px 10px 1px 10px;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
 
     .ymiCardContainer {
         display: grid;
@@ -210,101 +250,46 @@ $cardOrange: #f8744c;
 
         .ymiCardContent {
             height: 140px;
-            padding: 19px;
+            padding: 19px 12px;
             text-align: center;
             background-color: #3d3c3c;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             color: #ffffff;
-            border: 0.6px solid black;
+            border: 0.6px solid $blackColor;
 
             .ymiDiscirption {
                 font-size: 18px;
                 font-weight: 500;
-                font-family: "Helvetica Neue";
                 text-align: center;
             }
 
-            .ymicta {
-                @include rtacta(auto);
-            }
-
-            .rtacta img {
-                width: 16%;
-                height: 60%;
-                margin: 0px auto;
-            }
-
-            .rtacta.blacktop {
-                display: none;
-            }
-
-            &:hover {
-                background-color: white;
-                color: black;
-
-                .rtacta.blacktop {
-                    display: block;
-                }
-
-                .rtacta {
-                    display: none;
-                }
-            }
+            @include ctaBtn(16%, 60%, white, $blackColor);
         }
-    }
-
-    .ads {
-        @include ads();
     }
 }
 
 // You Interest End
 
+
 // Tablet To laptop Screen 
 @media only screen and (min-width:768px) and (max-width:991px) {
     .container {
-        padding: 0px 10px;
+        padding: 0px 15px;
     }
 
-    .ratContainer {
-        .ratCardContainer {
-            flex-wrap: wrap;
-
-            .ratCard {
-                width: 49%;
-
-                .ratCardContent {
-                    display: flex;
-                    align-items: center;
-                    padding: 10px 20px;
-                    .rtacta img {
-                        width: 100%;
-                    }
-                    .rtacta {
-                        margin: 0px 0px 0px auto;
-                    }
-                }
-            }
+    .headerContainer {
+        img {
+            max-width: 25%;
         }
     }
 
     .ratContainer {
+        @include rtaContainerMob(49%);
+
         .rtaLowerCardContainer {
-            .ratCard {
-                padding: 10px 20px;
-
-                .ratCardContent {
-                    .ratDiscirption {
-                        padding-left: 0rem;
-                    }
-
-                    .rtacta {
-                        margin-top: 0px;
-                    }
-                }
-            }
+            @include rtaLowerContainerMob('auto-fit');
         }
     }
 
@@ -321,6 +306,12 @@ $cardOrange: #f8744c;
         padding: 0px 10px;
     }
 
+    .headerContainer {
+        img {
+            max-width: 40%;
+        }
+    }
+
     .mainHeading {
         h1 {
             font-size: 24px;
@@ -332,43 +323,10 @@ $cardOrange: #f8744c;
     }
 
     .ratContainer {
-        .ratCardContainer {
-            flex-wrap: wrap;
+        @include rtaContainerMob(100%);
 
-            .ratCard {
-                width: 100%;
-
-                .ratCardContent {
-                    display: flex;
-                    align-items: center;
-                    padding: 10px 20px;
-
-                    .rtacta img {
-                        width: 100%;
-                    }
-                    .rtacta {
-                        margin: 0px 0px 0px auto;
-                    }
-                }
-            }
-        }
-    }
-
-    .ratContainer {
         .rtaLowerCardContainer {
-            grid-template-columns: auto;
-
-            .ratCard {
-                padding: 10px 20px;
-                .ratCardContent {
-                    .ratDiscirption {
-                        padding-left: 0rem;
-                    }
-                    .rtacta {
-                        margin-top: 0px;
-                    }
-                }
-            }
+            @include rtaLowerContainerMob(auto);
         }
     }
 
