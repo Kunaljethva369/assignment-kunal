@@ -1,110 +1,11 @@
+@import 'mixins';
+@import 'var';
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     font-family: "Helvetica" !important;
-}
-
-$orange : #e64616;
-$yellowBg : #ffd55c;
-$cardOrange: #f8744c;
-$taglineColor: #8b8989;
-$adsColor: #403f3f;
-$blackColor: black;
-
-@mixin ads {
-    text-align: right;
-    font-size: 12px;
-    color: $adsColor;
-}
-
-@mixin ctaHover($col) {
-    color: $col;
-    border: 1px solid $col;
-}
-
-@mixin rtaContainerMob($width, $fontSize) {
-    .ratCardContainer {
-        flex-wrap: wrap;
-
-        .ratCard {
-            width: $width;
-
-            .ratCardContent {
-                display: flex;
-                align-items: center;
-                padding: 10px;
-
-                .ratDiscirption {
-                    font-size: $fontSize;
-                }
-
-                .ratcta img {
-                    width: 100%;
-                }
-
-                .ratcta {
-                    margin: 0px 0px 0px auto;
-                }
-            }
-        }
-    }
-}
-
-@mixin rtaLowerContainerMob($gridCol, $fontSize) {
-    grid-template-columns: $gridCol;
-
-    .ratCard {
-        padding: 10px 20px;
-
-        .ratCardContent {
-            .ratDiscirption {
-                padding-left: 0rem;
-                font-size: $fontSize;
-            }
-
-            .ratcta {
-                margin-top: 0px;
-            }
-        }
-    }
-}
-
-@mixin ctaBtn($bgColor, $color) {
-    .ratcta img {
-        width: 20px;
-        height: 20px;
-        margin: 0px auto;
-    }
-
-    .ratcta.blacktop {
-        display: none;
-    }
-
-    &:hover {
-        background-color: $bgColor;
-        color: $color;
-
-        .ratcta.blacktop {
-            display: block;
-        }
-
-        .ratcta {
-            display: none;
-        }
-    }
-}
-
-@mixin ymiContainerMob($gridVal, $gridFr, $height) {
-    .ymiContainer {
-        .ymiCardContainer {
-            grid-template-columns: repeat($gridVal, $gridFr);
-
-            .ymiCardContent {
-                height: $height;
-            }
-        }
-    }
 }
 
 // Header Start
